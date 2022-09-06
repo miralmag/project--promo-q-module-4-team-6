@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "./static/css/main.7731bede.css",
+    "main.js": "./static/js/main.5eccdd61.js",
+    "static/media/jokers_del_script.png": "./static/media/jokers_del_script.0ab12076288f01fdc289.png",
+    "static/media/joker_face.jpg": "./static/media/joker_face.66b67c5e33d318aba6b3.jpg",
+    "index.html": "./index.html",
+    "main.7731bede.css.map": "./static/css/main.7731bede.css.map",
+    "main.5eccdd61.js.map": "./static/js/main.5eccdd61.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.7731bede.css",
+    "static/js/main.5eccdd61.js"
+  ]
+}
