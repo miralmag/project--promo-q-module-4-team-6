@@ -3,6 +3,9 @@ const express = require('express');
 const cors = require('cors');
 
 const server = express();
+server.set('view engine', 'ejs');
+
+
 
 server.use(cors());
 server.use(express.json({ limit: '10mb' }));
@@ -46,5 +49,14 @@ server.post('/card', (req, resp) => {
   }
 });
 
+
+server.get("/card", (req, res) => {
+  console.log(req.params);
+  res.render("card")
+})
+
 const staticServer = './web';
 server.use(express.static(staticServer));
+
+const staticServerStyles = './public';
+server.use(express.static(staticServerStyles));
