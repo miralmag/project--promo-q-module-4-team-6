@@ -8,6 +8,9 @@ server.set('view engine', 'ejs');
 server.use(cors());
 server.use(express.json({ limit: '10mb' }));
 
+const Database = require('better-sqlite3');
+const db = new Database('./database.db', { verbose: console.log });
+
 const serverPort = process.env.PORT || 4000;
 server.listen(serverPort, () => {
   console.log('listening' + serverPort);
@@ -48,11 +51,15 @@ server.post('/card', (req, resp) => {
 });
 
 server.get('/card/:id', (req, res) => {
-  console.log(req.params);
+  // console.log(req.params);
+  // const cardObject = saveCard.find((card) => card.id === req.params.id);
+  // res.render('card', cardObject);
+  const idParam = req.params.id;
 
-  const cardObject = saveCard.find((card) => card.id === req.params.id);
-
-  res.render('card', cardObject);
+  const query = db.prepare('SELECT * FROM datacard WHERE id=?');
+  const uniqueCard = query.all(idParam);
+  console.log(uniqueCard);
+  res.json({ success: true, uniqueCard });
 });
 
 const staticServer = './web';
