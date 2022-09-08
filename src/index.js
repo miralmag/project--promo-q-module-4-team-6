@@ -5,14 +5,12 @@ const cors = require('cors');
 const server = express();
 server.set('view engine', 'ejs');
 
-
-
 server.use(cors());
 server.use(express.json({ limit: '10mb' }));
 
-const port = 4000;
-server.listen(port, () => {
-  console.log('listening' + port);
+const serverPort = process.env.PORT || 4000;
+server.listen(serverPort, () => {
+  console.log('listening' + serverPort);
 });
 
 const saveCard = [];
@@ -49,11 +47,13 @@ server.post('/card', (req, resp) => {
   }
 });
 
-
-server.get("/card", (req, res) => {
+server.get('/card/:id', (req, res) => {
   console.log(req.params);
-  res.render("card")
-})
+
+  const cardObject = saveCard.find((card) => card.id === req.params.id);
+
+  res.render('card', cardObject);
+});
 
 const staticServer = './web';
 server.use(express.static(staticServer));

@@ -1,73 +1,59 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-<link rel="stylesheet" href="/main.css"/>
-
-
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@900&family=Open+Sans:wght@400;600&display=swap"
+    rel="stylesheet" />
+  <script src="https://kit.fontawesome.com/e653573ea4.js" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="/main.css" />
 </head>
+
 <body>
-    <aside
-    class={`card js_preview-container palette-${props.dataCard.palette}`}
-  >
-    <div class="card__info">
-      <p class="card__info--name js_previewName" id="name">
-        {props.dataCard.name || `Nombre apellidos`}
-      </p>
-      <p class="card__info--job js_previewJob" id="job">
-        {props.dataCard.job || `Frontend Developer`}
-      </p>
-    </div>
-    <div>
-      <Profile avatar={props.avatar} updateAvatar={props.updateAvatar} />
-    </div>
-    <ol class="rrss">
-      <li class="rrss__list">
-        <a
-          class="js_previewTel js_previewBtn"
-          id="phone"
-          href={`tel:${props.dataCard.phone}`}
-        >
-          <i class="rrss__list--item fa-solid fa-mobile-screen fa-xl"></i>
-        </a>
-      </li>
-      <li class="rrss__list">
-        <a
-          rel="noreferrer"
-          target="_blank"
-          class="js_previewEmail js_previewBtn"
-          id="email"
-          href={`mailto:${props.dataCard.email}`}
-        >
-          <i class="rrss__list--item fa-regular fa-envelope fa-xl"></i>
-        </a>
-      </li>
-      <li class="rrss__list">
-        <a
-          rel="noreferrer"
-          target="_blank"
-          class="js_previewLinkedin js_previewBtn"
-          id="linkedin"
-          href={`https://www.${}`}
-        >
-          <i class="rrss__list--item fa-brands fa-linkedin-in fa-xl"></i>
-        </a>
-      </li>
-      <li class="rrss__list">
-        <a
-          rel="noreferrer"
-          target="_blank"
-          class="js_previewGithub js_previewBtn"
-          id="github"
-          href={`https://github.com/${}`}
-        >
-          <i class="rrss__list--item fa-brands fa-github-alt fa-xl"></i>
-        </a>
-      </li>
-    </ol>
-  </aside>    
+  <section class="main__preview">
+    <aside class='card palette-<%=palette%>'>
+      <div class="card__info">
+        <p class="card__info--name js_previewName" id="name">
+          <%=name%>
+        </p>
+        <p class="card__info--job js_previewJob" id="job">
+          <%=job%>
+        </p>
+      </div>
+
+      <img src='<%=photo%>' class="card__photo profile__avatar" />
+
+      <ol class="rrss">
+        <li class="rrss__list">
+          <a class="js_previewTel js_previewBtn" id="phone" href='tel: <%=phone%>'>
+            <i class="rrss__list--item fa-solid fa-mobile-screen fa-xl"></i>
+          </a>
+        </li>
+        <li class="rrss__list">
+          <a rel="noreferrer" target="_blank" class="js_previewEmail js_previewBtn" id="email" href='mailto:<%=email%>'>
+            <i class="rrss__list--item fa-regular fa-envelope fa-xl"></i>
+          </a>
+        </li>
+        <li class="rrss__list">
+          <a rel="noreferrer" target="_blank" class="js_previewLinkedin js_previewBtn" id="linkedin"
+            href='https://www.<%=linkedin%>'>
+            <i class="rrss__list--item fa-brands fa-linkedin-in fa-xl"></i>
+          </a>
+        </li>
+        <li class="rrss__list">
+          <a rel="noreferrer" target="_blank" class="js_previewGithub js_previewBtn" id="github"
+            href='https://github.com/<%=github%>'>
+            <i class="rrss__list--item fa-brands fa-github-alt fa-xl"></i>
+          </a>
+        </li>
+      </ol>
+    </aside>
+  </section>
 </body>
+
 </html>
