@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "./static/css/main.1b402d71.css",
-    "main.js": "./static/js/main.30127d2c.js",
+    "main.js": "./static/js/main.2060cfae.js",
     "static/media/jokers_del_script.png": "./static/media/jokers_del_script.0ab12076288f01fdc289.png",
     "static/media/joker_face.jpg": "./static/media/joker_face.66b67c5e33d318aba6b3.jpg",
     "index.html": "./index.html",
     "main.1b402d71.css.map": "./static/css/main.1b402d71.css.map",
-    "main.30127d2c.js.map": "./static/js/main.30127d2c.js.map"
+    "main.2060cfae.js.map": "./static/js/main.2060cfae.js.map"
   },
   "entrypoints": [
     "static/css/main.1b402d71.css",
-    "static/js/main.30127d2c.js"
+    "static/js/main.2060cfae.js"
   ]
 }
